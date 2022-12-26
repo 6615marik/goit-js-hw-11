@@ -4,7 +4,6 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 
-import { fadeEffect } from './js/preloader';
 import { fetchImg } from './js/fetchImg';
 
 // HTML elements
@@ -141,7 +140,3 @@ loadBtn.addEventListener(
   },
   true
 );
-
-// Preloader
-
-window.addEventListener('load', fadeEffect);

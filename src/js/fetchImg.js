@@ -1,4 +1,4 @@
-import axios from 'axios';
+const axios = require('axios').default
 
 // Fetch images from Pixabay API using Axios
 
