@@ -1,12 +1,10 @@
-// Imports: SimpleLightbox, Notiflix & Axios
-
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import Notiflix from 'notiflix';
 
 import { fetchImg } from './js/fetchImg';
 
-// HTML elements
+
 
 const searchQuery = document.querySelector('input[name="searchQuery"]');
 const closeBtn = document.querySelector('.close-btn');
@@ -14,17 +12,17 @@ const searchForm = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
 const loadBtn = document.querySelector('.load-more');
 
-// Needed to query the Pixabay API
+
 let perPage = 40;
 let page = 0;
 let name = searchQuery.value;
 
-// Needed to hide "load more" and "close" buttons
+
 
 loadBtn.style.display = 'none';
 closeBtn.style.display = 'none';
 
-// Handling the "submit" button event
+
 
 async function eventHandler(e) {
   e.preventDefault();
@@ -67,8 +65,6 @@ async function eventHandler(e) {
 }
 
 searchForm.addEventListener('submit', eventHandler);
-
-// Function for markup for HTML gallery element
 
 function renderGallery(name) {
   const markup = name.hits
@@ -119,8 +115,6 @@ function renderGallery(name) {
   gallery.insertAdjacentHTML('beforeend', markup);
 }
 
-// Load more button - function
-
 loadBtn.addEventListener(
   'click',
   () => {
@@ -138,5 +132,5 @@ loadBtn.addEventListener(
       }
     });
   },
-  true
+  
 );
